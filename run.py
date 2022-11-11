@@ -1,12 +1,8 @@
-from flask import Flask
+from pygooglenews import GoogleNews
+import pandas as pd
 
-awas = Flask(__name__)
+gn = GoogleNews(lang='id', country='id)')
+search = gn.search('banjir akibat hujan')
 
-
-@awas.route('/')
-def hello_world():
-    return 'Hello World!'
-
-
-if __name__ == '__main__':
-    awas.run()
+for i in search['entries']:
+  print(i)
